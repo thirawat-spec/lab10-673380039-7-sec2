@@ -56,21 +56,35 @@ class Lab10ApplicationTests {
 
     @Test
     void testFindAll() {
-        // TODO: ทดสอบว่า findAll() คืน Flux ที่มี element
-        // Hint: StepVerifier.create(repository.findAll())
-        //         .expectNextCount(3)   ← มี 3 รายการ
-        //         .verifyComplete()
+        StepVerifier.create(repository.findAll())
+                .expectNextCount(3)
+                .verifyComplete();
     }
 
     @Test
     void testSave() {
-        // TODO: ทดสอบ save() บันทึกแล้วคืน Product
-        // Hint: สร้าง Product ใหม่ → save → expectNext → verifyComplete
+        Product product = new Product(
+                "4",
+                "Mechanical Keyboard",
+                "Electronics",
+                "Keychron",
+                10,
+                3500.0,
+                "NONE"
+        );
+
+        StepVerifier.create(repository.save(product))
+                .expectNextMatches(p ->
+                        p.getId().equals("4")
+                        && p.getName().equals("Mechanical Keyboard")
+                )
+                .verifyComplete();
     }
 
     @Test
     void testFindByCategory() {
-        // TODO: ทดสอบ findByCategory("Electronics")
-        // Hint: expectNextCount(3) เพราะมี 3 รายการใน Electronics
+        StepVerifier.create(repository.findByCategory("Electronics"))
+                .expectNextCount(3)
+                .verifyComplete();
     }
 }
