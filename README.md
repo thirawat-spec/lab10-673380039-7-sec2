@@ -189,11 +189,11 @@ src/main/java/com/example/lab10/
 | Method | URL | Return | สถานะ |
 |---|---|---|---|
 | GET | `/products/{id}` | `Mono<Product>` | ✅ ทำแล้ว (ตัวอย่าง) |
-| GET | `/products` | `Flux<Product>` | ❌ TODO |
-| POST | `/products` | `Mono<Product>` | ❌ TODO |
-| DELETE | `/products/{id}` | `Mono<Void>` | ❌ TODO |
-| GET | `/products/category/{cat}` | `Flux<Product>` | ❌ TODO |
-| GET | `/products/{id}/price` | `Mono<Double>` | ❌ TODO |
+| GET | `/products` | `Flux<Product>` | ✅ ทำแล้ว |
+| POST | `/products` | `Mono<Product>` | ✅ ทำแล้ว |
+| DELETE | `/products/{id}` | `Mono<Void>` | ✅ ทำแล้ว |
+| GET | `/products/category/{cat}` | `Flux<Product>` | ✅ ทำแล้ว |
+| GET | `/products/{id}/price` | `Mono<Double>` | ✅ ทำแล้ว |
 
 ---
 
